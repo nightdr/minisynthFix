@@ -96,7 +96,7 @@ def pretty(tree, subst={}, paren=False):
         }[op]
         return par('{} {} {}'.format(lhs, c, rhs))
     elif op == 'neg':
-        sub = pretty(tree.children[0], subst)
+        sub = pretty(tree.children[0], subst, True)
         return '-{}'.format(sub, True)
     elif op == 'num':
         return tree.children[0]
